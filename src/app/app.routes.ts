@@ -6,8 +6,17 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes'),
   },
   {
+    path: 'home',
+    loadChildren: () => import('./pages/pages.routes'),
+  },
+  {
     path: '',
     redirectTo: 'auth',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
+    redirectTo: 'pages',
     pathMatch: 'full',
   },
 ];

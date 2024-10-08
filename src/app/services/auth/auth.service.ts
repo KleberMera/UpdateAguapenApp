@@ -9,10 +9,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   private apiUrlBase = environment.aguapenApi;
-  http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   login(auth: Auth): Observable<Auth> {
     const url = `${this.apiUrlBase}login`;
-    return this.http.post<Auth>(url, { auth });
+    return this.http.post<Auth>(url, auth);
   }
 }
